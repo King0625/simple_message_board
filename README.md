@@ -20,3 +20,11 @@ To install facebook graph-sdk, make sure you have installed composer. If not, go
 And in your terminal( or cmd in windows ), enter this instruction
 
     composer require facebook/graph-sdk
+
+## Third party api websites references
+
+#### Facebook graph api
+[https://developers.facebook.com/docs/graph-api]
+
+#### Google reCaptcha v2
+[https://developers.google.com/recaptcha/docs/display]
