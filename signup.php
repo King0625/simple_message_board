@@ -8,6 +8,7 @@
 
 <?php
     require "classes/user.class.php";
+    require __DIR__ . "/config.php";
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
     $username = $_POST['username'];
@@ -19,7 +20,7 @@
         // confirm recaptcha v2
         $captcha = $_POST['g-recaptcha-response'];
         $ip = $_SERVER['REMOTE_ADDR'];
-        $secretkey = "6LdU1a0UAAAAAMcwZtFpwlcihatWPHnp_YyM6TaC";					
+        $secretkey = SECRET_KEY;					
         $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secretkey."&response=".$captcha."&remoteip=".$ip);
         $responseKeys = json_decode($response,true);	     
 
@@ -46,7 +47,7 @@
     <input type="password" name="password"><br>
     <label for="confirm-password">Confirm Password: </label>
     <input type="password" name="confirm-password"><br>
-    <div class="g-recaptcha" data-sitekey="6LdU1a0UAAAAAGLh4uKa1z1u0ZAgZ_dfI3w-SHjT"></div>
+    <div class="g-recaptcha" data-sitekey="<?php echo SITE_KEY; ?>"></div>
     <input type="submit" name="submit" value="Submit">
 </form>
 

@@ -5,6 +5,7 @@
 <?php 
 
     require "classes/password.class.php";
+    require __DIR__ . "/config.php";
 
     $username = $_POST['username'];
     $old_pwd = $_POST['old_pwd'];
@@ -15,7 +16,7 @@
         // confirm recaptcha v2
         $captcha = $_POST['g-recaptcha-response'];
         $ip = $_SERVER['REMOTE_ADDR'];
-        $secretkey = "6LdU1a0UAAAAAMcwZtFpwlcihatWPHnp_YyM6TaC";					
+        $secretkey = SECRET_KEY;					
         $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secretkey."&response=".$captcha."&remoteip=".$ip);
         $responseKeys = json_decode($response,true);
 
@@ -41,7 +42,7 @@
     <input type="password" name="new_pwd"><br>
     <label for="confirm_new_pwd">Confirm new password: </label>
     <input type="password" name="confirm_new_pwd"><br>
-    <div class="g-recaptcha" data-sitekey="6LdU1a0UAAAAAGLh4uKa1z1u0ZAgZ_dfI3w-SHjT"></div>
+    <div class="g-recaptcha" data-sitekey="<?php echo SITE_KEY; ?>"></div>
     <input type="submit" name="submit" value="Change password">
     <input type="submit" name="cancel" value="Cancel">
 </form>
