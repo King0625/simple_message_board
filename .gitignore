@@ -1,0 +1,8 @@
+# omit config.php
+config.php
+
+# omit all files in admin folder
+admin/
+
+# omit all files in vendor
+vendor/
