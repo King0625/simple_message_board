@@ -10,10 +10,13 @@ Furthermore, there are some database infos and api keys in this project. As a co
 
 (P.S. Since this is my php practice, it contains very little css, so the UI may be kind of terrible XD)
 
-##Installation
+## Installation
 
 To install facebook graph-sdk, make sure you have installed composer. If not, go get it!
+
 [https://getcomposer.org/]
 
+
 And in your terminal( or cmd in windows ), enter this instruction
-code(composer require facebook/graph-sdk)
+
+    composer require facebook/graph-sdk
