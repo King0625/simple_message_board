@@ -2,6 +2,7 @@
 require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/classes/user.class.php';
 require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/helpers/format.php';
 
 session_start();
 
@@ -31,6 +32,8 @@ try {
 $fb_user = $response->getGraphUser();
 // print_r($fb_user);
 // die(var_dump($fb_user));
+echo format($fb_user);
+die();
 
 echo "fb_id: " . $fb_user['id'] . "<br>";
 echo "firstname: " . $fb_user['first_name'] . "<br>";
