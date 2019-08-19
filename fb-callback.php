@@ -68,7 +68,7 @@ if (!$accessToken->isLongLived()) {
   echo '<h3>Long-lived</h3>';
   var_dump($accessToken->getValue());
 }
-
+// die();
 $_SESSION['fb_access_token'] = (string) $accessToken;
 
 // User is logged in with a long-lived access token.

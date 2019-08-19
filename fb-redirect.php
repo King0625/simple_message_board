@@ -30,9 +30,13 @@ try {
 // $graphNode = $response->getGraphNode();
 $fb_user = $response->getGraphUser();
 // print_r($fb_user);
+// die(var_dump($fb_user));
 
-// echo "firstname: " . $fb_user['first_name'];
-// echo "lastname: " . $fb_user['last_name'];
+echo "fb_id: " . $fb_user['id'] . "<br>";
+echo "firstname: " . $fb_user['first_name'] . "<br>";
+echo "lastname: " . $fb_user['last_name'] . "<br>";
+echo "<img src='" . $fb_user['picture']['url'] . "'><br>";
+// die();
 $data = [
     'fb_id' => $fb_user['id'],
     'firstname' => $fb_user['first_name'],

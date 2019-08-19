@@ -46,7 +46,7 @@
     
     $permissions = ['email']; // Optional permissions
     // print_r($permissions);
-    $loginUrl = $helper->getLoginUrl('http://localhost/cms/fb-callback.php', $permissions);
+    $loginUrl = $helper->getLoginUrl('http://localhost/simple_message_board/fb-callback.php', $permissions);
     echo "<h3>Or sign in with <span><a href='". htmlspecialchars($loginUrl) ."'>Facebook</a></span></h3>";
 
 ?>

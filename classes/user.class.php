@@ -225,6 +225,24 @@ class User{
 
                 }else{
                     $row = $stmt->fetch();
+                    // if($row['firstname'] != $firstname or $row['lastname'] != $lastname or $row['img'] != $img){
+                    //     $fb_id = $row['fb_id'];
+                    //     try{
+                    //         $stmt = $db->prepare("UPDATE fb_users SET firstname=:firstname, lastname=:lastname, img=:img WHERE fb_id='$fb_id'");
+                    //         $stmt->bindParam(':firstname', $param_firstname, PDO::PARAM_STR);
+                    //         $param_firstname = trim($firstname);
+                    //         $stmt->bindParam(':lastname', $param_lastname, PDO::PARAM_STR);
+                    //         $param_lastname = trim($lastname);
+                    //         $stmt->bindParam(':img', $param_img, PDO::PARAM_STR);
+                    //         $param_img = trim($img);
+            
+                    //         $stmt->execute();
+                        
+                    //     }catch(PDOException $e){
+                    //         echo '{"error":{"text":'. $e->getMessage() .'}}';
+                    //     }
+                    // }
+
                     $_SESSION['user'] = [ 
                         'id' => $row['fb_id'],
                         'fb' => true,
