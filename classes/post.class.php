@@ -3,6 +3,8 @@
     require 'reply.class.php';
 
     class Comment{
+        public $pages = 0;
+
         public function addComment($name, $topic, $content, $date){
             $dbconn = new DbConnection();
             $db = $dbconn->dbConn();
@@ -49,6 +51,15 @@
             $dbconn = new DbConnection();
             $db = $dbconn->dbConn();
             try{
+                $stmt = $db->prepare("SELECT * FROM posts");
+                $stmt->execute();
+                
+                // post counts
+                $count = $stmt->rowCount();
+                
+                $this->pages = ceil($count / $total_items_per_page);
+                
+
                 if(isset($get_page_no) && $get_page_no != ""){
                     $page_no = $get_page_no;
                 }else{
@@ -56,17 +67,6 @@
                 }
     
                 $offset = ($page_no - 1) * $total_items_per_page;
-                // $previous_page = $page_no - 1;
-                // $next_page = $page_no + 1;
-                // $adjacent = '2';
-
-                $stmt = $db->prepare("SELECT * FROM posts");
-                // post counts
-
-                $count = $stmt->rowCount();
-                $total_num_of_pages = ceil($count / $total_items_per_page);
-                $second_last = $total_num_of_pages - 1;
-
 
                 if(isset($search) && !empty($search)){
                     // no need single quotes in interger type 
@@ -75,7 +75,7 @@
                    
                 }else{
                     $stmt = $db->prepare("SELECT * FROM posts ORDER BY cid DESC LIMIT $offset,  $total_items_per_page");
-                    // $stmt = $db->prepare("SELECT * FROM posts ORDER BY cid DESC");
+
                 }
 
                 $stmt->execute();
@@ -117,7 +117,6 @@
                             // print_r($_SESSION['post']);
                             header("Location: editpost.php");
                         }
-                        
                     }
 
                     echo "<br>";

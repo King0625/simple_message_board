@@ -66,19 +66,19 @@
 
 	// get comment and reply at the same time --> add getReply in getComment function
 	echo "<div class='container'>";
-	$comment->getComment($name, $search, $_POST['reply_cid'], $_GET['page_no'],3);
+	$comment->getComment($name, $search, $_POST['reply_cid'], $_GET['page_no'], 3);
 	echo "</div>"; 
 	
+
 ?>
 
 
 <form class='pagination' action="" method="GET">
-	<input type="submit" name='page_no' value='1'>
-	<input type="submit" name='page_no' value='2'>
-	<input type="submit" name='page_no' value='3'>
-	<input type="submit" name='page_no' value='4'>
-	<input type="submit" name='page_no' value='5'>
-	<input type="submit" name='page_no' value='6'>
+	<?php 
+		for($i = 1; $i <= $comment->pages; $i++){
+			echo "<input type='submit' name='page_no' value='" . $i . "'>";
+		} 
+	?>
 </form>
 
 <?php include_once "includes/footer.inc.php"; ?>

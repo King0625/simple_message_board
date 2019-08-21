@@ -33,7 +33,7 @@ $fb_user = $response->getGraphUser();
 // print_r($fb_user);
 // die(var_dump($fb_user));
 echo format($fb_user);
-die();
+// die();
 
 echo "fb_id: " . $fb_user['id'] . "<br>";
 echo "firstname: " . $fb_user['first_name'] . "<br>";
@@ -58,5 +58,6 @@ $user->fb_login($data['fb_id'], $data['firstname'], $data['lastname'], $data['im
 //     'name' => $data['firstname'] . " " . $data['lastname'],
 //     'img' => $data['img']
 // ];
+
 
 header('Location: index.php');
