@@ -14,7 +14,7 @@ Furthermore, there are some database infos and api keys in this project. As a co
 
 To install facebook graph-sdk, make sure you have installed composer. If not, go get it!
 
-[https://getcomposer.org/]
+https://getcomposer.org/
 
 
 And in your terminal( or cmd in windows ), enter this instruction
@@ -24,7 +24,11 @@ And in your terminal( or cmd in windows ), enter this instruction
 ## Third party api websites references
 
 #### Facebook graph api
-[https://developers.facebook.com/docs/graph-api]
+https://developers.facebook.com/docs/graph-api
 
 #### Google reCaptcha v2
-[https://developers.google.com/recaptcha/docs/display]
+https://developers.google.com/recaptcha/docs/display
+
+
+## Notes:
+1. Facebook graph api (figure api endpoint): https://hackmd.io/5mxe-laNRN6Fzt2W9rt8Cg?both

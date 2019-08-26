@@ -80,7 +80,6 @@
 
                 $stmt->execute();
 
-
                 while($row = $stmt->fetch()){
                     echo "<hr><div class='message'>";
                     echo "<h2>". $row['name']."<span>  at " .$row['date'] . "</span></h2>";
