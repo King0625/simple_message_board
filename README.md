@@ -29,6 +29,5 @@ https://developers.facebook.com/docs/graph-api
 #### Google reCaptcha v2
 https://developers.google.com/recaptcha/docs/display
 
-
 ## Notes:
-1. Facebook graph api (figure api endpoint): https://hackmd.io/5mxe-laNRN6Fzt2W9rt8Cg?both
+1. Facebook graph api(Figure out the endpoint): https://hackmd.io/5mxe-laNRN6Fzt2W9rt8Cg
